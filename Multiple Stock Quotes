@@ -1,0 +1,20 @@
+from pandas_datareader.data import DataReader 
+from datetime import date 
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Set the start date
+start = date(2008,1,1)
+
+# Set the series code
+series = ['GOOGL', 'AAPL']
+datasource = 'google'
+
+# Import the data
+data = DataReader(series, datasource, start)
+
+# Plot the results
+data.plot(subplots=True, title='Stock Performance')
+
+# Show the plot
+plt.show()
